@@ -3,9 +3,32 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
 }
+.heading{
+  font-size: 72px;
+  background: -webkit-linear-gradient(#000000, #cfb7ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 2px 1px #776da0, 
+      -1px 3px 1px #82ad75, 
+      -2px 5px 1px #8ebf80;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+ .span{
+   font-size: 26px;
+   padding: 25px;
+   color: #776da0;
+   transition: background 200ms, border 200ms;
+   /* From https://css.glass */
+   background: rgba(255, 255, 255, 0.2);
+ padding: 1px 6px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ z-index: -1;
+ }
 
 .description {
   display: inherit;
@@ -27,7 +50,7 @@
 
 .description p {
   position: relative;
-  margin: 0;
+  margin: 100px;
   padding: 1rem;
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
@@ -47,11 +70,17 @@
 }
 
 .card {
+  color: #776da0;
+  margin:1.5rem;
   padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card span {
@@ -110,7 +139,10 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
+    color: rgb(69, 67, 67);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background: rgba(var(--card-rgb), 0.1);
+    transition: all ease 0.3s;
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
@@ -226,4 +258,15 @@
   to {
     transform: rotate(0deg);
   }
+}
+.menu{
+  color: white;
+  transition: background 200ms, border 200ms;
+  /* From https://css.glass */
+background: #776da0;
+padding: 1px 6px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
