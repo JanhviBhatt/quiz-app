@@ -19,8 +19,8 @@ const LoginButtons = () => {
   },[])
   return (
     <div>
-      <Button onClick={()=>router.push('/login')} class pl={195} pr={195} mt={100} color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'solid'} borderColor={'#776da0'} _active={{transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Log In</Button>
-      <Button onClick={()=>router.push('/register')} class pl={150} pr={150} mt={5} color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'solid'} borderColor={'#776da0'} _active={{transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Sign In With Email</Button>
+      <Button onClick={()=>router.push('/login')} class pl={200} pr={200} mt={100} color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'solid'} borderColor={'#776da0'} _active={{transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Log In</Button>
+      <Button onClick={()=>router.push('/register')} class pl={155} pr={155} mt={5} color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'solid'} borderColor={'#776da0'} _active={{transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Sign In With Email</Button>
       {providers && 
        Object.values(providers).map((provider)=>(
       <Button type='button' key={provider.name} onClick={()=> signIn(provider.id)} pl={150} pr={150} mt={5} color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'solid'} borderColor={'#776da0'} _active={{transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Sign In With {provider.name}</Button>

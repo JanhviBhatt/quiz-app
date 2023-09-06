@@ -6,19 +6,20 @@ import {
     Menu,
     MenuButton,
     MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider, Flex, Heading, ButtonGroup, Button, Box,Link, Spacer, Image, Text, StylesProvider, Show
+    Flex, Heading, ButtonGroup, Button, Box,Link, Spacer, Image, Text,  Show
 } from '@chakra-ui/react';
 import Styles from '../app/page.module.css'
 import { signOut,useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 
 const Navbar = () => {
     const {data:session} = useSession()
-   
+    const router = useRouter()
+    const handleSignOut = () =>{
+        router.push('/')
+        signOut() 
+    }
     return (
         <div>
             {/* desktop Navigation*/}
@@ -34,7 +35,7 @@ const Navbar = () => {
                         </Box>
                         <Spacer />
                         <ButtonGroup gap='2'>
-                            <Button color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'outline'} borderColor={'#776da0'} rounded={20} _active={{ transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)' onClick={signOut}>Sign Out</Button>
+                            <Button color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'outline'} borderColor={'#776da0'} rounded={20} _active={{ transform: 'scale(0.98)',}} transition='all 0.2s cubic-bezier(.08,.52,.52,1)' onClick={handleSignOut}>Sign Out</Button>
                                 <Image mr={2} alt='logo' width={30} height={30} mt={1} rounded={100} src={session?.user.image} />
                         </ButtonGroup>
                     </Flex>
@@ -72,12 +73,10 @@ const Navbar = () => {
                                 </MenuButton>
                                 
                                 <MenuList textAlign={'center'}>
-                                    <MenuItem><Link href='/profile' color='#776da0' >My Profile</Link></MenuItem>
-                                    <MenuItem><Link href='/pages/category' color='#776da0'>Score</Link></MenuItem>
                                     <Button color='#776da0' _hover={{ bg: '#776da0', color: 'white' }} variant={'outline'} borderColor={'#776da0'} rounded={20} _active={{
                                 transform: 'scale(0.98)',
                             }}
-                                transition='all 0.2s cubic-bezier(.08,.52,.52,1)'>Sign Out</Button>
+                                transition='all 0.2s cubic-bezier(.08,.52,.52,1)' onClick={handleSignOut}>Sign Out</Button>
                                 </MenuList>
                                
                             </Menu>

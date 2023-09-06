@@ -7,6 +7,7 @@ import { useState } from 'react'
 import LoginButtons from '@components/LoginButtons'
 import { useSession } from 'next-auth/react'
 import Ques from '@components/Ques'
+import Questions from '@components/Questions'
 
 export default function Home() {
   const {data:session} = useSession()
